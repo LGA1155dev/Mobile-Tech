@@ -99,6 +99,7 @@ menu > a > i:hover{
 
 main.principal{
     background-image: url('../imagens/particles.png');
+    background-attachment: fixed;
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
