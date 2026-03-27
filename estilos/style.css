@@ -4,16 +4,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
     --font-h1: "Montserrat";
@@ -28,6 +23,11 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 70px;
 }
 
 body{
@@ -68,6 +68,7 @@ body{
 }
 
 header{
+    z-index: 999;
     transform: translateY(0);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
@@ -102,6 +103,7 @@ nav{
 }
 
 nav > a{
+    transition: 0.3s all ease;
     color: #c373e6;
     font-weight: 900;
     padding: 15px;
@@ -117,6 +119,7 @@ a#markup{
 }
 
 nav > a:hover{
+    transform: scale(1.05);
     color: white;
     background-color: #6651c3;
     transition: background-color 1s, color 1s, transform 1s;
@@ -130,7 +133,7 @@ menu{
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    min-width: 300px;
 }
 
 menu > a{
@@ -181,6 +184,9 @@ main.principal{
 }
 
 #secao-frase > h1{
+    display: flex;
+    flex-flow: column wrap;
+    width: 700px;
     font-size: 7rem;
     letter-spacing: 1px;
     color: transparent;
@@ -195,6 +201,8 @@ main.principal{
 }
 
 #secao-frase > p{
+    display: flex;
+    flex-flow: row wrap;
     width: 500px;
     color:  #ceb8ef;
     font-size: 1.3em;
@@ -230,7 +238,7 @@ button#more{
     font-size: 1.1em;
     border-radius: 25px;
     border: 0px;
-    background-color: #61198d;
+    background-color: #8e35c5;
     cursor: pointer;
     color: #d7d7d7;
 }
@@ -246,7 +254,7 @@ button#more:hover{
 section.services{
     opacity: 0;
     transform: translateY(40px);
-    transition: all 0.6s ease;
+    transition: all 1s ease;
     display: flex;
     flex-flow: column;
     align-items: flex-start;
@@ -264,8 +272,8 @@ section.services{
 
 article.search{
     padding: 40px;
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
@@ -273,7 +281,8 @@ article.search{
 }
 
 article.search > input{
-    width: 70%;
+    border: 1px solid black;
+    min-width: 70%;
     padding: 20px;
     margin-right: 10px;
     border-radius: 10px;
@@ -295,73 +304,133 @@ article.search > button:hover{
 }
 
 #products{
-    padding: 40px;
     display: flex;
-    flex-flow:  row wrap;
-    width: 100%;
-    height: 700px;
-    gap:  20px;
-    box-shadow: 2px 2px 9px 2px #464646;
-}
-
-#basic-AI{
-    display: flex;
-    flex-flow: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 350px;
-    border-radius: 20px;
-    border: 1px solid black;
+    flex-flow:  row wrap;
+    min-height: 700px;
+    min-width: 100%;
+    gap:  50px;
+
 }
 
-#basic-AI > img{
-    width: 200px;
+.AI{
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-width: 400px;
+    align-items: center;
     border-radius: 20px;
 
-;
 }
 
-#basic-AI > button{
-    transform: translateY(-20px);
+.AI.show{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+.images{
+    width: 250px;
+    border-radius: 10px;
+}
+
+.button-ai{
+    transform: translateY(-20px) translateX(90px);
+    box-shadow: 1px 1px 11px 1px #3d3d3dab;
     padding: 10px;
-    border: 0px;
-    background-image: linear-gradient(25deg, #980cb8, #1350c0, #000000);
+    border: 55px;
+    background-color: #ffffff;
     border-radius: 20px;
     font-size: 1.2em;
-    color: white;
+    color: #5cb9e8;
 }
 
-#basic-AI > button:hover{
-    transition: transform .5s ease-in-out;
-    transform: translateY(-22px);
-    background-image: linear-gradient(125deg, #6d0d82bb, #0b347fb6, #000000ba);
+.button-ai:hover{
+    transition: transform .4s ease-in-out, background-color .5s ease-in-out;
     cursor: pointer;
 }
 
-#basic-AI > p{
-    font-size: 2em;
+.preco{
+    text-decoration: line-through 1px;
+    font-size: 1.1em;
     margin-bottom: 6px;
-    font-weight: 600;
-    font-family: var(--font-tech);
-    color: #105c10;
-}
-
-#basic-AI > p.name-AI{
-    background-image: linear-gradient(25deg, #8e1e9a, #7e268a, #3b7ceb, #111111);
-    -webkit-background-clip: text;
+    font-weight: 300;
     font-family: var(--font-h1);
-    color: transparent;
+    color: #be1919;
 }
 
-#pro-AI{
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
+.preco-promo{
+    transition: transform 0.3 ease;
+    font-size: 1.5em;
+    margin-top: 5px;
+    font-weight: 300;
+    font-family: var(--font-h1);
+    color: black;
+    margin-bottom: 5px;
 }
 
-#dimond-AI{
-    width: 200px;
-    height: 200px;
-    border: 1px solid red;
+.preco-promo.finalizado{
+    transform: scale(1.1);
 }
+
+.mais-vendido{
+    transform: translateX(-40px);
+    margin-bottom: 20px;
+    background-color: #eb6e1b;
+    font-family: var(--font-header);
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 2px;
+    font-weight: 500;
+    color: white;
+}
+
+.vendas{
+    transform: translateX(-30px);
+    font-family: var(--font-secondary);
+    margin-bottom: 10px;
+}
+
+.vendas > i{
+    color: #3b7ceb;
+}
+
+.parcelas{
+    font-family: var(--font-h1);
+    margin-bottom: 10px;
+}
+
+.cupom{
+    background-color: #0756dd3e;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: 300;
+    font-size: 1em;
+    font-family: var(--font-h1);
+
+}
+
+.cupom > i{
+    color: #3b7ceb;
+}
+
+.animar{
+    transform: scale(1.1);
+}
+
+.name-AI{
+    color: #000000;
+    font-family: var(--font-header);
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 10px;
+}
+
+
+
